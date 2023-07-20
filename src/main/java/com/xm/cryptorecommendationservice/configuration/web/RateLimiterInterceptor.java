@@ -35,7 +35,7 @@ class RateLimiterInterceptor implements HandlerInterceptor {
 
         if (isRequestRateLimited(rateLimiter)) {
             log.warn("Client IP {} is rate limited", clientIp);
-            response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value()); // 429
+            response.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
             return false;
         }
 

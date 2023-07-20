@@ -26,12 +26,18 @@ repositories {
     mavenCentral()
 }
 
+val springBootVersion = "3.1.1"
+val springDocVersion = "2.1.0"
+val resilience4jBomVersion = "2.1.0"
+val vavrVersion = "0.10.4"
+val commonsCsvVersion = "1.10.0"
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.apache.commons:commons-csv:1.10.0")
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
+    implementation("org.apache.commons:commons-csv:$commonsCsvVersion")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springDocVersion")
     implementation("io.github.resilience4j:resilience4j-spring-boot3")
-    implementation("io.vavr:vavr:0.10.4")
+    implementation("io.vavr:vavr:$vavrVersion")
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     annotationProcessor("org.projectlombok:lombok")
@@ -41,7 +47,7 @@ dependencies {
 
 the<DependencyManagementExtension>().apply {
     imports {
-        mavenBom("io.github.resilience4j:resilience4j-bom:2.1.0")
+        mavenBom("io.github.resilience4j:resilience4j-bom:$resilience4jBomVersion")
     }
 }
 

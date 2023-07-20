@@ -16,7 +16,7 @@ app:
 
 rate-limiter:
     refresh-period: ${RATE_LIMITER_REFRESH_PERIOD:10s}
-    limit: ${RATE_LIMITER_REFILL_TOKENS:5}
+    limit: ${RATE_LIMITER_REFILL_TOKENS:20}
     timeout-duration: ${RATE_LIMITER_TIMEOUT_DURATION:0}
 
 server:
