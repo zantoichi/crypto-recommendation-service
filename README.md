@@ -1,7 +1,4 @@
 # Crypto Recommendation Service
-
-A service that provides valuable insights about the market of cryptocurrencies.
-
 ## 🚀 Usage
 
 The service provides several APIs to fetch data:
