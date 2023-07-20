@@ -20,13 +20,6 @@ the following command to build the image:
 
 The generated Docker image contains the application and its dependencies.
 
-## 🛡️ Rate Limiting
-
-The service implements rate limiting to protect against abuse from malicious users.
-Rate limiting is based on the IP address of the client making the requests.
-By default, a maximum of 20 requests every 10 seconds per IP address is allowed,
-but this is configurable.
-
 ## ⚙️ Configuration
 
 The application uses `application.yml` for configuration.
