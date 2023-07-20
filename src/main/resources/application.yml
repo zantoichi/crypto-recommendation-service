@@ -1,0 +1,43 @@
+csv:
+    reader:
+        directory-path: ${CSV_DIRECTORY_PATH:src/main/resources/prices/}
+        file-suffix: ${CSV_FILE_SUFFIX:_values.csv}
+        timestamp-header: ${CSV_TIMESTAMP_HEADER:timestamp}
+        symbol-header: ${CSV_TIMESTAMP_HEADER:symbol}
+        price-header: ${CSV_TIMESTAMP_HEADER:price}
+
+app:
+    allowed-crypto:
+        - BTC
+        - ETH
+        - DOGE
+        - LTC
+        - XRP
+
+rate-limiter:
+    refresh-period: ${RATE_LIMITER_REFRESH_PERIOD:10s}
+    limit: ${RATE_LIMITER_REFILL_TOKENS:5}
+    timeout-duration: ${RATE_LIMITER_TIMEOUT_DURATION:0}
+
+server:
+    error:
+        whitelabel:
+            enabled: false
+    port: ${API_PORT:8081}
+    shutdown: graceful
+
+spring:
+    profiles:
+        active: dev
+    lifecycle:
+        timeout-per-shutdown-phase: 1m
+    main:
+        lazy-initialization: false
+    mvc:
+        problemdetails:
+            enabled: true
+
+springdoc:
+    swagger-ui:
+        enabled: true
+        path: /swagger-ui.html
